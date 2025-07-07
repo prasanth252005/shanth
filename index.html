@@ -1104,9 +1104,9 @@
         };
 
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const storage = firebase.storage();
+        // firebase.initializeApp(firebaseConfig); // Only initialize if you use Firebase for something else
+        // const auth = firebase.auth(); // Comment out if Firebase Auth is not needed
+        // const storage = firebase.storage(); // Comment out if Firebase Storage is not needed
 
         // Google API Client ID from the provided JSON
         const GOOGLE_CLIENT_ID = "108441946051-oc8kae5351ojn7evuphtlcj1f3eqv7o0.apps.googleusercontent.com";
@@ -1145,7 +1145,7 @@
 
         function initClient() {
             gapi.client.init({
-                apiKey: "YOUR_GOOGLE_API_KEY", // You might need a separate API key for gapi.client.init if not using Firebase for all API calls
+                // apiKey: "YOUR_GOOGLE_API_KEY", // Removed as per instructions
                 clientId: GOOGLE_CLIENT_ID,
                 discoveryDocs: DISCOVERY_DOCS,
                 scope: SCOPES
@@ -1161,27 +1161,27 @@
         }
 
         async function signInWithGoogle() {
-            const provider = new firebase.auth.GoogleAuthProvider();
+            // const provider = new firebase.auth.GoogleAuthProvider(); // Removed Firebase auth
             try {
-                const result = await auth.signInWithPopup(provider);
-                googleUser = result.user;
-                updateUIForSignedInUser(googleUser);
-                await gapi.auth2.getAuthInstance().signIn(); // Also sign in with gapi for Drive API
+                // const result = await auth.signInWithPopup(provider); // Removed Firebase auth
+                // googleUser = result.user; // Removed Firebase auth
+                // updateUIForSignedInUser(googleUser); // This will be called by updateSignInStatus after gapi sign-in
+                await gapi.auth2.getAuthInstance().signIn(); // Only sign in with gapi for Drive API
             } catch (error) {
-                console.error("Error during Google sign-in with Firebase:", error);
+                console.error("Error during Google sign-in:", error);
                 alert('Google Sign-In failed. Check console for details.');
             }
         }
 
         function signOut() {
-            auth.signOut().then(() => {
-                console.log("User signed out from Firebase.");
+            // auth.signOut().then(() => { // Removed Firebase auth
+            //     console.log("User signed out from Firebase."); // Removed Firebase auth
                 gapi.auth2.getAuthInstance().signOut(); // Also sign out from Google API
                 updateUIForSignedOutUser();
                 filesGrid.innerHTML = ''; // Clear files on logout
-            }).catch((error) => {
-                console.error("Error signing out from Firebase:", error);
-            });
+            // }).catch((error) => { // Removed Firebase auth
+            //     console.error("Error signing out from Firebase:", error); // Removed Firebase auth
+            // }); // Removed Firebase auth
         }
 
         function updateSignInStatus(isSignedIn) {
@@ -1236,7 +1236,7 @@
                 'mimeType': file.type
             };
 
-            const accessToken = gapi.auth.getToken().access_token;
+            const accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token; // Fixed accessToken retrieval
 
             const form = new FormData();
             form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
@@ -1257,6 +1257,22 @@
 
                 const data = await response.json();
                 console.log('Uploaded file:', data);
+
+                // Optional: Make the uploaded file public
+                await fetch(`https://www.googleapis.com/drive/v3/files/${data.id}/permissions`, {
+                  method: 'POST',
+                  headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    role: 'reader',
+                    type: 'anyone'
+                  })
+                });
+                console.log('File permissions updated to public.');
+
+
                 uploadStatusSpan.textContent = 'Upload complete!';
                 uploadProgressFill.style.width = '100%';
                 setTimeout(() => {

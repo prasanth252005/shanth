@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prasanth R - Full Stack Developer</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
     <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style>
@@ -18,7 +15,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacMacSystemFont, sans-serif;
             background: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
@@ -72,7 +69,7 @@
 
         @keyframes glow {
             from { filter: drop-shadow(0 0 5px #00ffff); }
-            to { filter: drop-shadow(0 0 20px #ff00ff); }
+            to { filter: drop_shadow(0 0 20px #ff00ff); }
         }
 
         .nav-links {
@@ -606,17 +603,17 @@
             .nav-links {
                 display: none;
             }
-            
+
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -655,7 +652,7 @@
 <body>
     <div class="scroll-indicator"></div>
     <canvas id="bg-canvas"></canvas>
-    
+
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">Prasanth R</div>
@@ -691,19 +688,19 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hello! I'm Prasanth R, a passionate Electronics and Communication Engineering student at 
-                        Karpagam Institute of Technology, Coimbatore. With a strong foundation in embedded systems, 
-                        IoT, and hardware design, I'm dedicated to creating innovative solutions that bridge the gap 
+                        Hello! I'm Prasanth R, a passionate Electronics and Communication Engineering student at
+                        Karpagam Institute of Technology, Coimbatore. With a strong foundation in embedded systems,
+                        IoT, and hardware design, I'm dedicated to creating innovative solutions that bridge the gap
                         between technology and real-world applications.
                     </p>
                     <p>
-                        My journey in electronics spans microprocessors, embedded systems, IoT development, and PCB design. 
-                        I've completed specialized training programs and have hands-on experience with various hardware platforms 
+                        My journey in electronics spans microprocessors, embedded systems, IoT development, and PCB design.
+                        I've completed specialized training programs and have hands-on experience with various hardware platforms
                         including Arduino, Raspberry Pi, and ESP32.
                     </p>
                     <p>
-                        Currently pursuing my B.E. in Electronics and Communication Engineering with a CGPA of 7.13, 
-                        I'm passionate about developing accessible technology solutions, particularly for assistive devices 
+                        Currently pursuing my B.E. in Electronics and Communication Engineering with a CGPA of 7.13,
+                        I'm passionate about developing accessible technology solutions, particularly for assistive devices
                         and disaster management systems.
                     </p>
                 </div>
@@ -768,7 +765,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-image">🚨</div>
                     <div class="project-content">
@@ -788,7 +785,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="project-card">
                     <div class="project-image">🔌</div>
                     <div class="project-content">
@@ -825,7 +822,7 @@
                         <p class="grade">CGPA: 7.13</p>
                     </div>
                 </div>
-                
+
                 <div class="education-card">
                     <div class="education-icon">📜</div>
                     <div class="education-content">
@@ -835,7 +832,7 @@
                         <p class="grade">Percentage: 82%</p>
                     </div>
                 </div>
-                
+
                 <div class="education-card">
                     <div class="education-icon">🏫</div>
                     <div class="education-content">
@@ -846,7 +843,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="certifications-section">
                 <h3 style="text-align: center; margin: 3rem 0 2rem 0; color: #00ffff;">Certifications & Training</h3>
                 <div class="certifications-grid">
@@ -886,7 +883,7 @@
                 <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
                     Seamlessly manage your files with integrated Google Drive functionality powered by Firebase.
                 </p>
-                
+
                 <div class="drive-features">
                     <div class="feature-card">
                         <div class="feature-icon">📤</div>
@@ -909,7 +906,7 @@
                         <p>Create and sync notes across all your devices seamlessly</p>
                     </div>
                 </div>
-                
+
                 <div style="text-align: center; margin-top: 2rem;">
                     <div id="auth-section">
                         <div id="sign-in-section">
@@ -922,13 +919,13 @@
                             <button id="logout-btn" class="btn btn-secondary">🚪 Logout</button>
                         </div>
                     </div>
-                    
+
                     <div id="file-management" style="display: none; margin-top: 2rem;">
                         <div class="file-controls">
                             <button id="refresh-files" class="btn btn-secondary">🔄 Refresh Files</button>
                             <input type="text" id="search-files" placeholder="Search files..." style="margin-left: 1rem; padding: 0.5rem; border-radius: 5px; border: 1px solid #333; background: rgba(255,255,255,0.1); color: #fff;">
                         </div>
-                        
+
                         <div id="files-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
                             </div>
                     </div>
@@ -944,8 +941,8 @@
                 <div class="contact-info">
                     <h3>Let's Work Together</h3>
                     <p>
-                        I'm always interested in hearing about new projects and opportunities. 
-                        Whether you have a project in mind or just want to chat about technology, 
+                        I'm always interested in hearing about new projects and opportunities.
+                        Whether you have a project in mind or just want to chat about technology,
                         feel free to reach out!
                     </p>
                     <p>
@@ -954,7 +951,7 @@
                         <strong>Location:</strong> Coimbatore, Tamil Nadu, India<br>
                         <strong>Response Time:</strong> Within 24 hours
                     </p>
-                    
+
                     <div class="social-links">
                         <a href="#" class="social-link">📧</a>
                         <a href="#" class="social-link">📘</a>
@@ -963,7 +960,7 @@
                         <a href="#" class="social-link">🐱</a>
                     </div>
                 </div>
-                
+
                 <form class="contact-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -993,51 +990,273 @@
         </div>
     </footer>
 
-    <script>
-        // Firebase Configuration (REPLACE WITH YOUR OWN)
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+        import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, listAll } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-storage.js";
+        import { getFirestore, collection, addDoc, getDocs, serverTimestamp, query, orderBy, where } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+        // Firebase config
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyAccTxpjdQ2eAVLilG3Sf4-oPigCmI78c0",
+            authDomain: "prasanth-portfolio-b1596.firebaseapp.com",
+            projectId: "prasanth-portfolio-b1596",
+            storageBucket: "prasanth-portfolio-b1596.appspot.com",
+            messagingSenderId: "325596519979",
+            appId: "1:325596519979:web:4cd1fcdf6ff096de06146e"
         };
 
         // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const storage = firebase.storage();
-        const storageRef = storage.ref();
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+        provider.setCustomParameters({
+            client_id: "877536058735-dj0ii1n6qkgpk5beeggcl8lcrkh8did8.apps.googleusercontent.com"
+        });
+        const storage = getStorage(app);
+        const db = getFirestore(app);
 
-        // DOM Elements
-        const signInSection = document.getElementById('sign-in-section');
-        const signedInSection = document.getElementById('signed-in-section');
-        const userInfoDiv = document.getElementById('user-info');
+        // UI Elements
         const googleSignInBtn = document.getElementById('google-signin-btn');
-        const logoutBtn = document.getElementById('logout-btn');
+        const signedInSection = document.getElementById('signed-in-section');
+        const userInfo = document.getElementById('user-info');
         const fileInput = document.getElementById('file-input');
         const uploadBtn = document.getElementById('upload-btn');
-        const refreshFilesBtn = document.getElementById('refresh-files');
-        const filesGrid = document.getElementById('files-grid');
+        const logoutBtn = document.getElementById('logout-btn');
         const fileManagementSection = document.getElementById('file-management');
-        const uploadProgressDiv = document.querySelector('.upload-progress');
-        const progressBarFill = document.querySelector('.progress-fill');
+        const refreshFilesBtn = document.getElementById('refresh-files');
         const searchFilesInput = document.getElementById('search-files');
+        const filesGrid = document.getElementById('files-grid');
+
+        // Combined UI Elements for Notes System
+        const noteInput = document.getElementById('noteInput'); // This ID existed in the second snippet, but not the first. Adding for completeness.
+        const addNoteBtn = document.getElementById('addNoteBtn'); // This ID existed in the second snippet, but not the first. Adding for completeness.
+        const notesList = document.getElementById('notesList'); // This ID existed in the second snippet, but not the first. Adding for completeness.
+
+        // Event Listeners for Firebase integration
+        googleSignInBtn.addEventListener('click', signInWithGoogle);
+        logoutBtn.addEventListener('click', signOutUser);
+        uploadBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', handleFileUpload);
+        refreshFilesBtn.addEventListener('click', loadUserFiles);
+        searchFilesInput.addEventListener('input', loadUserFiles); // Reload files on search input
+
+        // Auth Functions
+        async function signInWithGoogle() {
+            try {
+                await signInWithPopup(auth, provider);
+            } catch (error) {
+                console.error("Sign-in failed:", error);
+                alert("Sign-in failed: " + error.message);
+            }
+        }
+
+        async function signOutUser() {
+            try {
+                await signOut(auth);
+            } catch (error) {
+                console.error("Sign-out failed:", error);
+                alert("Sign-out failed: " + error.message);
+            }
+        }
+
+        // Enable/Disable features based on auth state
+        onAuthStateChanged(auth, async user => {
+            if (user) {
+                googleSignInBtn.style.display = 'none';
+                signedInSection.style.display = 'block';
+                fileManagementSection.style.display = 'block';
+                userInfo.innerHTML = `<img src="${user.photoURL}" alt="User Avatar" class="user-avatar"> ${user.displayName}`;
+                await loadUserFiles(); // Load files for signed-in user
+                await loadNotes(); // Load notes for signed-in user
+            } else {
+                googleSignInBtn.style.display = 'block';
+                signedInSection.style.display = 'none';
+                fileManagementSection.style.display = 'none';
+                userInfo.innerHTML = '';
+                filesGrid.innerHTML = ''; // Clear files when signed out
+                notesList.innerHTML = ''; // Clear notes when signed out
+            }
+        });
+
+        // File Upload
+        async function handleFileUpload(e) {
+            if (!auth.currentUser) return;
+            const files = e.target.files;
+            const uploadProgressDiv = document.querySelector('.upload-progress') || document.createElement('div'); // Create if not exists
+            uploadProgressDiv.className = 'upload-progress';
+            uploadProgressDiv.style.display = 'block';
+            if (!uploadProgressDiv.parentNode) {
+                fileManagementSection.appendChild(uploadProgressDiv); // Append to file management section
+            }
+
+            for (const file of files) {
+                const filePath = `uploads/${auth.currentUser.uid}/${Date.now()}_${file.name}`;
+                const fileRef = storageRef(storage, filePath);
+                const uploadTask = uploadBytes(fileRef, file);
+
+                uploadTask.on('state_changed',
+                    (snapshot) => {
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                        uploadProgressDiv.innerHTML = `Uploading ${file.name}: <div class="progress-bar"><div class="progress-fill" style="width: ${progress}%"></div></div>`;
+                    },
+                    (error) => {
+                        console.error(`Upload failed for ${file.name}:`, error);
+                        uploadProgressDiv.innerHTML = `<span style="color:red;">Failed to upload ${file.name}: ${error.message}</span>`;
+                    },
+                    async () => {
+                        uploadProgressDiv.innerHTML = `<span style="color:green;">Uploaded ${file.name} successfully!</span>`;
+                        await loadUserFiles(); // Refresh file list after upload
+                        setTimeout(() => uploadProgressDiv.style.display = 'none', 3000); // Hide after 3 seconds
+                    }
+                );
+            }
+            fileInput.value = ''; // Clear input
+        }
+
+        // Load User Files (Gallery & File Management)
+        async function loadUserFiles() {
+            if (!auth.currentUser) return;
+            filesGrid.innerHTML = 'Loading files...';
+            const listRef = storageRef(storage, `uploads/${auth.currentUser.uid}`);
+            const searchTerm = searchFilesInput.value.toLowerCase();
+
+            try {
+                const res = await listAll(listRef);
+                filesGrid.innerHTML = '';
+                let foundFiles = false;
+
+                for (const itemRef of res.items) {
+                    const fileName = itemRef.name;
+                    if (searchTerm && !fileName.toLowerCase().includes(searchTerm)) {
+                        continue; // Skip if it doesn't match search term
+                    }
+                    foundFiles = true;
+
+                    const url = await getDownloadURL(itemRef);
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'file-item';
+                    fileItem.setAttribute('data-url', url); // Store URL for later use (e.g., viewing)
+
+                    let icon = '📄'; // Default icon
+                    let fileTypeClass = '';
+                    if (/\.(jpg|jpeg|png|gif|bmp|webp)$/i.test(fileName)) {
+                        icon = '🖼️';
+                        fileTypeClass = 'image-file';
+                    } else if (/\.(pdf)$/i.test(fileName)) {
+                        icon = '📄';
+                        fileTypeClass = 'pdf-file';
+                    } else if (/\.(zip|rar|7z)$/i.test(fileName)) {
+                        icon = '🗄️';
+                        fileTypeClass = 'archive-file';
+                    } else if (/\.(doc|docx)$/i.test(fileName)) {
+                        icon = '📝';
+                        fileTypeClass = 'document-file';
+                    } else if (/\.(mp3|wav)$/i.test(fileName)) {
+                        icon = '🎧';
+                        fileTypeClass = 'audio-file';
+                    } else if (/\.(mp4|avi|mov)$/i.test(fileName)) {
+                        icon = '🎬';
+                        fileTypeClass = 'video-file';
+                    }
+
+
+                    fileItem.innerHTML = `
+                        <div class="file-icon">${icon}</div>
+                        <div class="file-name">${fileName}</div>
+                        <div class="file-size"></div>
+                    `;
+                    fileItem.classList.add(fileTypeClass);
+
+                    // Add click listener to open file (for images, display in gallery; for others, download)
+                    fileItem.addEventListener('click', () => {
+                        if (fileTypeClass === 'image-file') {
+                            const imgModal = document.createElement('div');
+                            imgModal.style.cssText = `
+                                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                                background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center;
+                                z-index: 9999;
+                            `;
+                            imgModal.innerHTML = `<img src="${url}" style="max-width: 90%; max-height: 90%; object-fit: contain;">`;
+                            imgModal.addEventListener('click', () => imgModal.remove());
+                            document.body.appendChild(imgModal);
+                        } else {
+                            window.open(url, '_blank'); // Open other files in new tab/download
+                        }
+                    });
+
+                    filesGrid.appendChild(fileItem);
+
+                    // Fetch file metadata to get size (optional, requires additional Firebase calls)
+                    // You might need to implement a separate function for this or get it during upload
+                }
+                if (!foundFiles) {
+                    filesGrid.innerHTML = '<em>No files found or matching your search.</em>';
+                }
+            } catch (err) {
+                console.error("Error loading files:", err);
+                filesGrid.innerHTML = `<span style="color:red;">Error loading files: ${err.message}</span>`;
+            }
+        }
+
+        // Notes System
+        window.addNote = async function() { // Made global to be callable from HTML onclick
+            if (!auth.currentUser) return;
+            const text = noteInput.value.trim();
+            if (!text) return;
+            try {
+                await addDoc(collection(db, "notes"), {
+                    uid: auth.currentUser.uid,
+                    text,
+                    created: serverTimestamp()
+                });
+                noteInput.value = '';
+                await loadNotes();
+            } catch (err) {
+                console.error("Failed to add note:", err);
+                alert("Failed to add note: " + err.message);
+            }
+        };
+
+        async function loadNotes() {
+            if (!auth.currentUser) return;
+            // Ensure notesList exists before trying to modify it
+            if (!notesList) return;
+
+            notesList.innerHTML = '<li>Loading notes...</li>';
+            const q = query(collection(db, "notes"), where("uid", "==", auth.currentUser.uid), orderBy("created", "desc"));
+            try {
+                const snapshot = await getDocs(q);
+                let found = false;
+                notesList.innerHTML = ''; // Clear existing notes
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    found = true;
+                    const li = document.createElement('li');
+                    li.textContent = data.text;
+                    notesList.appendChild(li);
+                });
+                if (!found) notesList.innerHTML = '<li><em>No notes yet.</em></li>';
+            } catch (err) {
+                console.error("Error loading notes:", err);
+                notesList.innerHTML = `<li style="color:red;">Error: ${err.message}</li>`;
+            }
+        }
 
         // Three.js background animation
         let scene, camera, renderer, particles;
-        
+
         function initThreeJS() {
             scene = new THREE.Scene();
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            
+
             // Create particles
             const geometry = new THREE.BufferGeometry();
             const vertices = [];
-            
+
             for (let i = 0; i < 1000; i++) {
                 vertices.push(
                     (Math.random() - 0.5) * 2000,
@@ -1045,49 +1264,49 @@
                     (Math.random() - 0.5) * 2000
                 );
             }
-            
+
             geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-            
+
             const material = new THREE.PointsMaterial({
                 color: 0x00ffff,
                 size: 2,
                 transparent: true,
                 opacity: 0.6
             });
-            
+
             particles = new THREE.Points(geometry, material);
             scene.add(particles);
-            
+
             camera.position.z = 1000;
-            
+
             animate();
         }
-        
+
         function animate() {
             requestAnimationFrame(animate);
-            
+
             particles.rotation.x += 0.0005;
             particles.rotation.y += 0.0005;
-            
+
             renderer.render(scene, camera);
         }
-        
+
         // Navigation scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             const scrollIndicator = document.querySelector('.scroll-indicator');
-            
+
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
+
             // Update scroll indicator
             const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
             scrollIndicator.style.transform = `scaleX(${scrollPercent / 100})`;
         });
-        
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1099,13 +1318,13 @@
                 });
             });
         });
-        
+
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1113,224 +1332,22 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
-        
-        // --- Google Drive integration functions (Firebase) ---
 
-        // Function to update UI based on authentication state
-        function updateUI(user) {
-            if (user) {
-                signInSection.style.display = 'none';
-                signedInSection.style.display = 'block';
-                fileManagementSection.style.display = 'block';
-                userInfoDiv.innerHTML = `<img src="${user.photoURL}" alt="User Avatar" class="user-avatar"> ${user.displayName}`;
-                refreshFiles(); // Automatically refresh files on login
-            } else {
-                signInSection.style.display = 'block';
-                signedInSection.style.display = 'none';
-                fileManagementSection.style.display = 'none';
-                userInfoDiv.innerHTML = '';
-                filesGrid.innerHTML = '';
-            }
-        }
-
-        // Google Sign-in
-        googleSignInBtn.addEventListener('click', () => {
-            const provider = new firebase.auth.GoogleAuthProvider();
-            auth.signInWithPopup(provider)
-                .then((result) => {
-                    console.log("Signed in as:", result.user.displayName);
-                    // UI will be updated by auth.onAuthStateChanged listener
-                })
-                .catch((error) => {
-                    console.error("Google Sign-In Error:", error);
-                    alert("Error signing in with Google: " + error.message);
-                });
-        });
-
-        // Logout
-        logoutBtn.addEventListener('click', () => {
-            auth.signOut().then(() => {
-                console.log("Signed out");
-                // UI will be updated by auth.onAuthStateChanged listener
-            }).catch((error) => {
-                console.error("Logout Error:", error);
-                alert("Error logging out: " + error.message);
-            });
-        });
-
-        // Handle file upload
-        uploadBtn.addEventListener('click', () => {
-            fileInput.click(); // Trigger file input click
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            const files = e.target.files;
-            if (files.length > 0) {
-                uploadProgressDiv.style.display = 'block';
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const user = auth.currentUser;
-                    if (user) {
-                        const fileRef = storageRef.child(`users/${user.uid}/files/${file.name}`);
-                        const uploadTask = fileRef.put(file);
-
-                        uploadTask.on('state_changed', 
-                            (snapshot) => {
-                                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                                progressBarFill.style.width = progress + '%';
-                                console.log('Upload is ' + progress + '% done');
-                            }, 
-                            (error) => {
-                                console.error("Upload Error:", error);
-                                alert("File upload failed: " + error.message);
-                                uploadProgressDiv.style.display = 'none';
-                            }, 
-                            () => {
-                                uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-                                    console.log('File available at', downloadURL);
-                                    alert(`File "${file.name}" uploaded successfully!`);
-                                    uploadProgressDiv.style.display = 'none';
-                                    progressBarFill.style.width = '0%'; // Reset progress bar
-                                    refreshFiles(); // Refresh file list after upload
-                                });
-                            }
-                        );
-                    } else {
-                        alert("Please sign in to upload files.");
-                        uploadProgressDiv.style.display = 'none';
-                    }
-                }
-            }
-        });
-
-        // Function to refresh file list
-        refreshFilesBtn.addEventListener('click', refreshFiles);
-
-        function refreshFiles() {
-            const user = auth.currentUser;
-            if (user) {
-                filesGrid.innerHTML = ''; // Clear current files
-                const userFilesRef = storageRef.child(`users/${user.uid}/files`);
-
-                userFilesRef.listAll().then((res) => {
-                    res.items.forEach((itemRef) => {
-                        itemRef.getMetadata().then((metadata) => {
-                            itemRef.getDownloadURL().then((downloadURL) => {
-                                const fileName = metadata.name;
-                                const fileSize = (metadata.size / 1024).toFixed(2); // in KB
-                                const fileTypeIcon = getFileIcon(metadata.contentType);
-
-                                const fileItem = document.createElement('div');
-                                fileItem.className = 'file-item';
-                                fileItem.innerHTML = `
-                                    <div class="file-icon">${fileTypeIcon}</div>
-                                    <div class="file-name">${fileName}</div>
-                                    <div class="file-size">${fileSize} KB</div>
-                                    <a href="${downloadURL}" target="_blank" class="btn btn-secondary" style="margin-top: 10px; padding: 0.5rem 1rem; font-size: 0.9rem;">Download</a>
-                                    <button class="btn btn-primary delete-btn" data-path="${itemRef.fullPath}" style="margin-top: 5px; padding: 0.5rem 1rem; font-size: 0.9rem; background: #ff0000;">Delete</button>
-                                `;
-                                filesGrid.appendChild(fileItem);
-
-                                // Add event listener for delete button
-                                fileItem.querySelector('.delete-btn').addEventListener('click', (e) => {
-                                    const filePath = e.target.dataset.path;
-                                    if (confirm(`Are you sure you want to delete "${fileName}"?`)) {
-                                        const fileToDeleteRef = storage.ref(filePath);
-                                        fileToDeleteRef.delete().then(() => {
-                                            alert(`File "${fileName}" deleted successfully.`);
-                                            refreshFiles(); // Refresh list after deletion
-                                        }).catch((error) => {
-                                            console.error("Error deleting file:", error);
-                                            alert("Error deleting file: " + error.message);
-                                        });
-                                    }
-                                });
-                            });
-                        }).catch((error) => {
-                            console.error("Error getting file metadata or download URL:", error);
-                        });
-                    });
-                    if (res.items.length === 0) {
-                        filesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">No files found. Upload some!</p>';
-                    }
-                }).catch((error) => {
-                    console.error("Error listing files:", error);
-                    alert("Error fetching files: " + error.message);
-                });
-            } else {
-                filesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">Sign in to view your files.</p>';
-            }
-        }
-
-        function getFileIcon(contentType) {
-            if (contentType.startsWith('image')) {
-                return '📸';
-            } else if (contentType.startsWith('video')) {
-                return '🎥';
-            } else if (contentType.startsWith('audio')) {
-                return '🎵';
-            } else if (contentType.includes('pdf')) {
-                return '📄';
-            } else if (contentType.includes('document') || contentType.includes('text')) {
-                return '📝';
-            } else if (contentType.includes('spreadsheet')) {
-                return '📊';
-            } else if (contentType.includes('presentation')) {
-                return '💻';
-            } else if (contentType.includes('zip') || contentType.includes('rar')) {
-                return '📦';
-            }
-            return '📁'; // Default file icon
-        }
-
-        // Search functionality
-        searchFilesInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const fileItems = filesGrid.querySelectorAll('.file-item');
-            fileItems.forEach(item => {
-                const fileName = item.querySelector('.file-name').textContent.toLowerCase();
-                if (fileName.includes(searchTerm)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-
-        // Listen for authentication state changes
-        auth.onAuthStateChanged(updateUI);
-
-        // --- Contact form handler ---
+        // Contact form handler
         function handleSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // In a real application, you would send this data to a server-side endpoint
-            // (e.g., Firebase Cloud Function, Node.js server, etc.)
-            // to send an email securely. Client-side email sending is not recommended
-            // due to security concerns (exposing API keys, spam risks).
-
-            // For demonstration, we'll just log and confirm.
-            console.log("Contact Form Submission:");
-            console.log("Name:", name);
-            console.log("Email:", email);
-            console.log("Subject:", subject);
-            console.log("Message:", message);
-
-            alert('Thank you for your message! I will get back to you soon. (Note: Actual email sending requires server-side implementation.)');
-            event.target.reset(); // Clear the form
+            alert('Message sent! I\'ll get back to you soon.');
+            event.target.reset();
         }
-        
+        window.handleSubmit = handleSubmit; // Make global for HTML
+
         // Initialize Three.js when page loads
         window.addEventListener('load', initThreeJS);
-        
+
         // Handle window resize
         window.addEventListener('resize', () => {
             if (camera && renderer) {
@@ -1339,13 +1356,13 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
             }
         });
-        
+
         // Add some interactive hover effects
         document.querySelectorAll('.project-card, .skill-card, .feature-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
-            
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0) scale(1)';
             });
